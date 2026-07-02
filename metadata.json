@@ -1,0 +1,6 @@
+{
+  "name": "StreamWave",
+  "description": "Unlimited Entertainment, One Wave Away. Watch movies, TV shows, anime, and live sports on your Android device.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
