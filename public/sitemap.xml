@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
   <url>
-    <loc>https://streamwave.app/</loc>
-    <lastmod>2026-06-30</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://official-streamwave-apk.vercel.app/</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <!-- Privacy Policy (SPA hash-navigated) -->
+  <url>
+    <loc>https://official-streamwave-apk.vercel.app/#privacy</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Terms & Conditions -->
+  <url>
+    <loc>https://official-streamwave-apk.vercel.app/#terms</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- DMCA Policy -->
+  <url>
+    <loc>https://official-streamwave-apk.vercel.app/#dmca</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Contact -->
+  <url>
+    <loc>https://official-streamwave-apk.vercel.app/#contact</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
 </urlset>

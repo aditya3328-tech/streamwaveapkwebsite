@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Page Not Found | StreamWave</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        background: #000;
+        color: #fff;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* Subtle radial ambient */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(ellipse at center, rgba(255,255,255,0.03) 0%, transparent 70%);
+        pointer-events: none;
+      }
+
+      .logo-mark {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      .code {
+        font-size: clamp(5rem, 18vw, 9rem);
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        color: #fff;
+        margin-bottom: 0.5rem;
+        /* Very subtle gradient fill */
+        background: linear-gradient(135deg, #fff 60%, #555 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .divider {
+        width: 40px;
+        height: 1px;
+        background: #333;
+        margin: 1.5rem auto;
+      }
+
+      h1 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 0.75rem;
+        letter-spacing: -0.02em;
+      }
+
+      p {
+        font-size: 0.875rem;
+        color: #737373;
+        max-width: 320px;
+        line-height: 1.65;
+        margin-bottom: 2.5rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 2rem;
+        background: #fff;
+        color: #000;
+        font-weight: 700;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 9999px;
+        transition: background 0.2s;
+      }
+      .btn:hover { background: #e5e5e5; }
+
+      .footer-note {
+        margin-top: 4rem;
+        font-size: 0.7rem;
+        color: #404040;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- SW Logo Mark -->
+    <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect width="100" height="100" rx="22" fill="#111"/>
+      <path
+        d="M25 45 C25 25, 55 25, 55 42 C55 58, 25 54, 25 70 C25 82, 55 82, 55 70 M50 70 L65 40 M65 40 L73 55 M73 55 L81 40 L85 45"
+        stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"
+      />
+    </svg>
+
+    <div class="code" aria-label="Error 404">404</div>
+
+    <div class="divider"></div>
+
+    <h1>Page Not Found</h1>
+    <p>
+      The page you're looking for doesn't exist or may have been moved.
+      Head back to the homepage and keep watching.
+    </p>
+
+    <a href="/" class="btn">
+      <!-- Arrow left icon -->
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M19 12H5M12 5l-7 7 7 7"/>
+      </svg>
+      Back to StreamWave
+    </a>
+
+    <p class="footer-note">StreamWave &copy; 2026</p>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
-import { APK_URL } from "../config";
-import { ArrowUpRight, Download, ShieldAlert, Sparkles } from "lucide-react";
+import { APK_URL, VERSION, ANDROID_MIN, RELEASE_NOTES } from "../config";
+import { ArrowUpRight, Download, ShieldAlert, Sparkles, Smartphone, FileText } from "lucide-react";
 import { InstallStep } from "../types";
 
 const STEPS: InstallStep[] = [
@@ -101,7 +101,43 @@ export const HowToInstall: React.FC = () => {
           ))}
         </div>
 
-        {/* Dynamic call to action row */}
+        {/* ── Requirements & Release Notes ───────────────────────────── */}
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Android Requirements */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex items-start gap-4 p-5 bg-[#0a0a0a] border border-neutral-800 rounded-2xl"
+          >
+            <div className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center shrink-0 mt-0.5">
+              <Smartphone className="w-4 h-4 text-neutral-400" aria-hidden="true" />
+            </div>
+            <div>
+              <p className="text-white text-xs font-semibold mb-1 tracking-tight">Requirements</p>
+              <p className="text-neutral-500 text-xs leading-relaxed">{ANDROID_MIN} &mdash; No root access required. Works on phones and tablets.</p>
+            </div>
+          </motion.div>
+
+          {/* Release Notes */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex items-start gap-4 p-5 bg-[#0a0a0a] border border-neutral-800 rounded-2xl"
+          >
+            <div className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center shrink-0 mt-0.5">
+              <FileText className="w-4 h-4 text-neutral-400" aria-hidden="true" />
+            </div>
+            <div>
+              <p className="text-white text-xs font-semibold mb-1 tracking-tight">What's New in v{VERSION}</p>
+              <p className="text-neutral-500 text-xs leading-relaxed">{RELEASE_NOTES}</p>
+            </div>
+          </motion.div>
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -114,7 +150,7 @@ export const HowToInstall: React.FC = () => {
             </div>
             <div>
               <p className="text-white font-medium text-sm tracking-tight">Ready to begin?</p>
-              <p className="text-neutral-500 text-xs">Download the current version (v2.4.1) directly.</p>
+              <p className="text-neutral-500 text-xs">Download the current version (v{VERSION}) directly.</p>
             </div>
           </div>
           <a

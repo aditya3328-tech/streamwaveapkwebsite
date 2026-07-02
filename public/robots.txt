@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /apk/
 
-Sitemap: https://streamwave.app/sitemap.xml
+Sitemap: https://official-streamwave-apk.vercel.app/sitemap.xml

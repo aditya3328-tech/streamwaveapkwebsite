@@ -1,6 +1,14 @@
 import React from "react";
-import { APK_URL, TELEGRAM_URL } from "../config";
-import { Download, Send } from "lucide-react";
+import {
+  APK_URL,
+  TELEGRAM_URL,
+  VERSION,
+  RELEASE_DATE,
+  RELEASE_NOTES,
+  APK_SIZE,
+  ANDROID_MIN,
+} from "../config";
+import { Download, Send, Smartphone } from "lucide-react";
 import { motion } from "motion/react";
 import { Logo } from "./Logo";
 
@@ -164,15 +172,23 @@ export const Hero: React.FC = () => {
           <Logo size="lg" showText={false} />
         </motion.div>
 
-        {/* Small Android Badge */}
+        {/* Version + Android Badge Row */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="inline-flex items-center gap-1.5 px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs font-mono text-neutral-400 uppercase tracking-widest mb-6"
+          className="flex flex-wrap items-center justify-center gap-2 mb-6"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-          ANDROID V5.0+ SUPPORTED
+          {/* Latest version badge */}
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs font-mono text-neutral-400 uppercase tracking-widest">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            v{VERSION} &nbsp;·&nbsp; {new Date(RELEASE_DATE).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+          </span>
+          {/* Android requirement chip */}
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs font-mono text-neutral-500 uppercase tracking-widest">
+            <Smartphone className="w-3 h-3" aria-hidden="true" />
+            {ANDROID_MIN}
+          </span>
         </motion.div>
 
         {/* Hero Title */}
@@ -229,18 +245,24 @@ export const Hero: React.FC = () => {
           </a>
         </motion.div>
 
-        {/* Version details / sizes info */}
+        {/* Version info row */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-8 flex gap-6 text-xs font-mono text-neutral-500"
+          className="mt-8 flex flex-col items-center gap-2"
         >
-          <span>Latest Ver: v2.4.1</span>
-          <span>•</span>
-          <span>Size: 18.4 MB</span>
-          <span>•</span>
-          <span>No root required</span>
+          <div className="flex flex-wrap justify-center gap-4 text-xs font-mono text-neutral-500">
+            <span>v{VERSION}</span>
+            <span>·</span>
+            <span>{APK_SIZE}</span>
+            <span>·</span>
+            <span>No root required</span>
+          </div>
+          {/* Release notes */}
+          <p className="text-[11px] text-neutral-600 font-mono max-w-xs text-center leading-relaxed">
+            <span className="text-neutral-500 font-semibold">What's new: </span>{RELEASE_NOTES}
+          </p>
         </motion.div>
       </div>
     </section>

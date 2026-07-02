@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { AppPreview } from "./components/AppPreview";
@@ -18,6 +18,18 @@ export default function App() {
     setCurrentView(view);
     window.scrollTo({ top: 0 });
   };
+
+  // Dynamic document title per view
+  useEffect(() => {
+    const titles: Record<typeof currentView, string> = {
+      home:    "StreamWave - Premium Android Streaming App | Movies, Shows & Sports",
+      privacy: "Privacy Policy | StreamWave",
+      terms:   "Terms & Conditions | StreamWave",
+      dmca:    "DMCA Policy | StreamWave",
+      contact: "Contact Us | StreamWave",
+    };
+    document.title = titles[currentView];
+  }, [currentView]);
 
   return (
     <div className="min-h-screen bg-[#000000] text-white selection:bg-white selection:text-black font-sans flex flex-col" id="app-root">
