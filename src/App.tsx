@@ -5,6 +5,7 @@ import { AppPreview } from "./components/AppPreview";
 import { Features } from "./components/Features";
 import { HowToInstall } from "./components/HowToInstall";
 import { FAQ } from "./components/FAQ";
+import { SeoContent } from "./components/SeoContent";
 import { Footer } from "./components/Footer";
 import { PrivacyPolicy } from "./components/PrivacyPolicy";
 import { TermsAndConditions } from "./components/TermsAndConditions";
@@ -22,7 +23,7 @@ export default function App() {
   // Dynamic document title per view
   useEffect(() => {
     const titles: Record<typeof currentView, string> = {
-      home:    "StreamWave APK – Android Streaming App for Movies & TV Shows",
+      home:    "Free Movie App – Watch Movies & TV Shows | StreamWave",
       privacy: "Privacy Policy | StreamWave",
       terms:   "Terms & Conditions | StreamWave",
       dmca:    "DMCA Policy | StreamWave",
@@ -32,7 +33,7 @@ export default function App() {
 
     // Keep the meta description in sync per view for JS-rendering crawlers.
     const descriptions: Record<typeof currentView, string> = {
-      home:    "Download StreamWave APK for Android. Watch movies, TV shows, anime and sports with HD streaming, subtitles and a fast, user-friendly experience.",
+      home:    "StreamWave is a free movie app for Android to watch movies and TV shows online in HD. Download the APK to stream films offline with subtitles — no sign-up.",
       privacy: "Read the StreamWave Privacy Policy to learn how the Android streaming app handles your data and privacy.",
       terms:   "Review the StreamWave Terms & Conditions for using the Android streaming app.",
       dmca:    "StreamWave DMCA Policy and copyright takedown information for the Android streaming app.",
@@ -65,6 +66,9 @@ export default function App() {
 
             {/* Interactive Accordion FAQs */}
             <FAQ />
+
+            {/* Long-form SEO content: keyword-rich, human-written context */}
+            <SeoContent />
           </main>
         )}
 

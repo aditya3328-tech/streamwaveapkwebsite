@@ -3,22 +3,36 @@ import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown, HelpCircle } from "lucide-react";
 import { FAQItem } from "../types";
 
+// Kept in sync with the FAQPage JSON-LD in index.html so the visible answers
+// and the structured data always match (a Bing/Google rich-result requirement).
 const FAQS: FAQItem[] = [
   {
-    question: "Is StreamWave free?",
-    answer: "Yes. StreamWave is 100% free to download and use. We believe in providing premium, unhindered streaming without mandatory paid plans, subscriptions, or hidden paywalls.",
+    question: "Is StreamWave a free movie app?",
+    answer: "Yes. StreamWave is a 100% free movie app for Android. You can watch movies and TV shows online in HD with no mandatory subscriptions, paid plans, or hidden paywalls.",
   },
   {
-    question: "Is it available for Android?",
-    answer: "Absolutely. StreamWave is designed specifically for Android operating systems. It is fully compatible with Android smartphones, tablets, Chromebooks, and Android TV / Fire TV sticks (requires sideloading the APK). Android v5.0 or higher is required.",
+    question: "How do I install the StreamWave APK?",
+    answer: "Download the StreamWave APK from this official site, open Android Settings and enable \"Install unknown apps\" for your browser, then open the downloaded .apk file and tap Install. Launch the app and start streaming — no root and no registration required.",
   },
   {
-    question: "Does it support subtitles?",
+    question: "Can I watch movies and TV shows offline?",
+    answer: "Yes. StreamWave lets you download movies and full TV series to your device so you can watch them offline later, without using data or waiting for buffering.",
+  },
+  {
+    question: "Can I use the movie app on a laptop or PC?",
+    answer: "StreamWave is an Android movie app, so it runs on phones, tablets, and Chromebooks. To use the movie app on a laptop or PC, install it through an Android emulator or a Chromebook that supports Android apps.",
+  },
+  {
+    question: "Does the app support subtitles?",
     answer: "Yes. StreamWave features robust subtitles integration. It loads synced captions dynamically in multiple languages (English, Spanish, French, Portuguese, Hindi, etc.) for almost all movies, TV shows, and anime content directly inside our player.",
   },
   {
-    question: "Can I watch sports?",
-    answer: "Yes, StreamWave hosts a dedicated sports hub featuring high-definition, low-latency live streams of major sports associations. This includes global football leagues, professional basketball, motorsport matches, cricket tournaments, and more.",
+    question: "Can I watch TV shows and series on StreamWave?",
+    answer: "Yes. This movie and TV app offers complete TV series with full seasons and episode layouts, alongside movies, anime, and live sports broadcasts in HD.",
+  },
+  {
+    question: "Which Android versions are supported?",
+    answer: "StreamWave runs on Android 5.0 (Lollipop) or higher and works on Android phones, tablets, Chromebooks, and Android TV / Fire TV sticks via sideloading the APK.",
   },
 ];
 

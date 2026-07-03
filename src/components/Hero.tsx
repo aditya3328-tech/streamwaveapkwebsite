@@ -209,8 +209,8 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="text-neutral-400 text-base sm:text-lg md:text-xl font-normal max-w-2xl mb-12 leading-relaxed"
         >
-          Watch movies, TV shows, anime, and live sports on your Android device.<br className="hidden sm:block" />
-          Fast playback, no subscription, and built-in subtitle support.
+          StreamWave is a free movie app for Android — watch movies, TV shows, anime, and live sports.<br className="hidden sm:block" />
+          Fast HD playback, no subscription, and built-in subtitle support.
         </motion.p>
 
         {/* CTA Buttons */}
