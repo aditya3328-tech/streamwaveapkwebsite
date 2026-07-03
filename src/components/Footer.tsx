@@ -1,7 +1,7 @@
 import React from "react";
 import { Logo } from "./Logo";
-import { TELEGRAM_URL, APK_URL } from "../config";
-import { ArrowUp, Send } from "lucide-react";
+import { TELEGRAM_URL, APK_URL, CANONICAL_URL } from "../config";
+import { ArrowUp, Send, Share2, Twitter, Facebook } from "lucide-react";
 
 export const Footer: React.FC<{
   onNavigate?: (view: "home" | "privacy" | "terms" | "dmca" | "contact") => void;
@@ -18,6 +18,55 @@ export const Footer: React.FC<{
     { label: "Contact Us", view: "contact" as const },
   ];
 
+  // On-page internal anchors (help crawlers map the site structure)
+  const exploreLinks = [
+    { label: "Home", href: "#hero-section" },
+    { label: "Features", href: "#features" },
+    { label: "How To Install", href: "#install" },
+    { label: "FAQ", href: "#faq" },
+    { label: "Download", href: "#install-section-cta" },
+  ];
+
+  // Legitimate external authority links (opened safely in a new tab)
+  const resourceLinks = [
+    { label: "Android Developer Docs", href: "https://developer.android.com/guide" },
+    { label: "Google Play Policies", href: "https://support.google.com/googleplay/android-developer/answer/113474" },
+    { label: "Sideloading Guide", href: "https://developer.android.com/guide/app-bundle" },
+  ];
+
+  const shareText = "Watch movies, TV shows, anime & live sports on Android with StreamWave.";
+  const shareLinks = [
+    {
+      label: "Share on X",
+      icon: Twitter,
+      href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(CANONICAL_URL)}`,
+    },
+    {
+      label: "Share on Facebook",
+      icon: Facebook,
+      href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(CANONICAL_URL)}`,
+    },
+    {
+      label: "Share on Telegram",
+      icon: Send,
+      href: `https://t.me/share/url?url=${encodeURIComponent(CANONICAL_URL)}&text=${encodeURIComponent(shareText)}`,
+    },
+  ];
+
+  const handleAnchorClick = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    const el = document.getElementById(href.replace("#", ""));
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Not on the home view — navigate home first, then scroll.
+      onNavigate?.("home");
+      setTimeout(() => {
+        document.getElementById(href.replace("#", ""))?.scrollIntoView({ behavior: "smooth" });
+      }, 200);
+    }
+  };
+
   return (
     <footer
       className="bg-[#000000] border-t border-neutral-900 py-16"
@@ -30,7 +79,7 @@ export const Footer: React.FC<{
           <div className="flex flex-col gap-3">
             <Logo size="md" />
             <p className="text-neutral-500 text-xs max-w-sm mt-1">
-              StreamWave is a modern Android streaming utility hosting direct connections to movies, shows, and high-definition sports streams.
+              StreamWave is a modern Android streaming app hosting direct connections to movies, TV shows, anime, and high-definition sports streams.
             </p>
           </div>
 
@@ -60,6 +109,96 @@ export const Footer: React.FC<{
             </button>
           </div>
         </div>
+
+        {/* Link columns — internal navigation, external resources & sharing */}
+        <nav
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12"
+          aria-label="Footer navigation"
+        >
+          {/* Explore (internal anchors) */}
+          <div>
+            <h2 className="text-white text-xs font-semibold uppercase tracking-widest mb-4">Explore</h2>
+            <ul className="flex flex-col gap-2.5">
+              {exploreLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    onClick={(e) => handleAnchorClick(e, link.href)}
+                    className="text-neutral-500 hover:text-white text-xs transition-colors duration-150"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal (internal views) */}
+          <div>
+            <h2 className="text-white text-xs font-semibold uppercase tracking-widest mb-4">Legal</h2>
+            <ul className="flex flex-col gap-2.5">
+              {footerLinks.map((link) => (
+                <li key={link.label}>
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (onNavigate) onNavigate(link.view);
+                      else window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    aria-label={`View our ${link.label}`}
+                    className="text-neutral-500 hover:text-white text-xs transition-colors duration-150 text-left cursor-pointer"
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources (external authority links) */}
+          <div>
+            <h2 className="text-white text-xs font-semibold uppercase tracking-widest mb-4">Resources</h2>
+            <ul className="flex flex-col gap-2.5">
+              {resourceLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-neutral-500 hover:text-white text-xs transition-colors duration-150"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Share */}
+          <div>
+            <h2 className="text-white text-xs font-semibold uppercase tracking-widest mb-4 flex items-center gap-1.5">
+              <Share2 className="w-3.5 h-3.5 text-neutral-400" aria-hidden="true" /> Share
+            </h2>
+            <div className="flex items-center gap-3">
+              {shareLinks.map((s) => {
+                const Icon = s.icon;
+                return (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    title={s.label}
+                    className="w-9 h-9 rounded-full bg-neutral-950 border border-neutral-800 hover:bg-neutral-900 hover:text-white flex items-center justify-center text-neutral-400 transition-colors duration-200"
+                  >
+                    <Icon className="w-4 h-4" aria-hidden="true" />
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        </nav>
 
         <hr className="border-neutral-900 mb-8" />
 

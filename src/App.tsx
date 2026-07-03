@@ -22,13 +22,24 @@ export default function App() {
   // Dynamic document title per view
   useEffect(() => {
     const titles: Record<typeof currentView, string> = {
-      home:    "StreamWave - Premium Android Streaming App | Movies, Shows & Sports",
+      home:    "StreamWave APK – Android Streaming App for Movies & TV Shows",
       privacy: "Privacy Policy | StreamWave",
       terms:   "Terms & Conditions | StreamWave",
       dmca:    "DMCA Policy | StreamWave",
       contact: "Contact Us | StreamWave",
     };
     document.title = titles[currentView];
+
+    // Keep the meta description in sync per view for JS-rendering crawlers.
+    const descriptions: Record<typeof currentView, string> = {
+      home:    "Download StreamWave APK for Android. Watch movies, TV shows, anime and sports with HD streaming, subtitles and a fast, user-friendly experience.",
+      privacy: "Read the StreamWave Privacy Policy to learn how the Android streaming app handles your data and privacy.",
+      terms:   "Review the StreamWave Terms & Conditions for using the Android streaming app.",
+      dmca:    "StreamWave DMCA Policy and copyright takedown information for the Android streaming app.",
+      contact: "Contact the StreamWave team for support with the Android streaming app.",
+    };
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute("content", descriptions[currentView]);
   }, [currentView]);
 
   return (

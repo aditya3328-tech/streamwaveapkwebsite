@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>StreamWave — Updates</title>
+    <link>https://official-streamwave-apk.vercel.app/</link>
+    <atom:link href="https://official-streamwave-apk.vercel.app/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Release notes and updates for StreamWave, the free Android streaming app for movies, TV shows, anime and live sports.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Aug 2026 00:00:00 GMT</lastBuildDate>
+    <image>
+      <url>https://official-streamwave-apk.vercel.app/og-image.png</url>
+      <title>StreamWave — Updates</title>
+      <link>https://official-streamwave-apk.vercel.app/</link>
+    </image>
+    <item>
+      <title>StreamWave v1.1.0 released</title>
+      <link>https://official-streamwave-apk.vercel.app/#download</link>
+      <guid isPermaLink="false">streamwave-v1.1.0</guid>
+      <pubDate>Sat, 15 Aug 2026 00:00:00 GMT</pubDate>
+      <description>Added multi-language subtitles, improved player UI, and fixed bugs. Download the latest StreamWave APK for Android.</description>
+    </item>
+  </channel>
+</rss>
