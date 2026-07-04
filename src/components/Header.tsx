@@ -87,6 +87,7 @@ export const Header: React.FC<{
         <div className="hidden md:flex items-center gap-4">
           <a
             href={APK_URL}
+            download
             aria-label="Download StreamWave Android APK installer"
             className="flex items-center gap-2 px-5 py-2.5 bg-white text-black hover:bg-neutral-200 font-semibold text-xs rounded-full tracking-wide uppercase transition-all duration-200"
             id="header-download-btn"
@@ -133,6 +134,7 @@ export const Header: React.FC<{
               <hr className="border-neutral-800" />
               <a
                 href={APK_URL}
+                download
                 aria-label="Download StreamWave Android APK installer"
                 className="flex items-center justify-center gap-2 w-full py-3 bg-white text-black font-semibold rounded-full tracking-wide uppercase text-sm transition-all duration-200"
                 id="mobile-header-download-btn"

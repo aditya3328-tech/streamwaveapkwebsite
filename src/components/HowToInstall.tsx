@@ -89,6 +89,7 @@ export const HowToInstall: React.FC = () => {
               {step.number === 1 ? (
                 <a
                   href={APK_URL}
+                  download
                   aria-label="Download the APK installer package to begin Step 1"
                   className="inline-flex items-center gap-1.5 text-xs font-mono font-bold tracking-wider uppercase text-white hover:text-neutral-400 transition-colors duration-200 mt-auto"
                 >
@@ -155,6 +156,7 @@ export const HowToInstall: React.FC = () => {
           </div>
           <a
             href={APK_URL}
+            download
             aria-label="Download the StreamWave Android APK package"
             className="w-full md:w-auto px-6 py-3 bg-white text-black font-bold text-xs uppercase tracking-wider rounded-full hover:bg-neutral-200 text-center transition-colors duration-200"
             id="install-section-cta"

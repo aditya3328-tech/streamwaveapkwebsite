@@ -223,6 +223,7 @@ export const Hero: React.FC = () => {
           {/* Download APK - Primary */}
           <a
             href={APK_URL}
+            download
             aria-label="Download StreamWave Android APK installer directly to your device"
             className="flex items-center justify-center gap-2.5 w-full sm:w-auto px-8 py-4 bg-white text-black hover:bg-neutral-200 font-bold text-sm tracking-wide uppercase rounded-full transition-all duration-200 shadow-lg shadow-white/5 active:scale-98"
             id="hero-download-btn"

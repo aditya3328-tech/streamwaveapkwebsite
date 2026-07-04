@@ -4,6 +4,7 @@ import { Hero } from "./components/Hero";
 import { AppPreview } from "./components/AppPreview";
 import { Features } from "./components/Features";
 import { HowToInstall } from "./components/HowToInstall";
+import { DownloadSection } from "./components/DownloadSection";
 import { FAQ } from "./components/FAQ";
 import { SeoContent } from "./components/SeoContent";
 import { Footer } from "./components/Footer";
@@ -63,6 +64,9 @@ export default function App() {
 
             {/* Sideload & Installation Walkthrough Guide */}
             <HowToInstall />
+
+            {/* Dedicated premium download experience (APK, details, install guide) */}
+            <DownloadSection />
 
             {/* Interactive Accordion FAQs */}
             <FAQ />
