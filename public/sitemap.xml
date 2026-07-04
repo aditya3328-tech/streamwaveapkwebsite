@@ -7,6 +7,13 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <!-- APK Versions archive -->
+  <url>
+    <loc>https://official-streamwave-apk.vercel.app/versions</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- Privacy Policy (SPA hash-navigated) -->
   <url>
     <loc>https://official-streamwave-apk.vercel.app/#privacy</loc>

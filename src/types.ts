@@ -1,5 +1,8 @@
 import { LucideIcon } from "lucide-react";
 
+// Client-side "routes" for the single-page app.
+export type View = "home" | "privacy" | "terms" | "dmca" | "contact" | "versions";
+
 export interface FeatureItem {
   icon: LucideIcon;
   title: string;

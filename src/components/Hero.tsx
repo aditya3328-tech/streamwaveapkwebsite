@@ -12,7 +12,7 @@ import { Download, Send, Smartphone } from "lucide-react";
 import { motion } from "motion/react";
 import { Logo } from "./Logo";
 
-export const Hero: React.FC = () => {
+export const Hero: React.FC<{ onViewVersions?: () => void }> = ({ onViewVersions }) => {
   return (
     <section
       className="relative min-h-screen flex flex-col justify-center items-center bg-[#000000] text-center pt-28 px-6 overflow-hidden animate-fade-in"
@@ -243,6 +243,29 @@ export const Hero: React.FC = () => {
           >
             <Send className="w-4 h-4 text-neutral-400" aria-hidden="true" />
             JOIN TELEGRAM
+          </a>
+        </motion.div>
+
+        {/* Secondary link — full APK version archive */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.45 }}
+          className="mt-5"
+        >
+          <a
+            href="/versions"
+            onClick={(e) => {
+              if (onViewVersions) {
+                e.preventDefault();
+                onViewVersions();
+              }
+            }}
+            aria-label="View older StreamWave APK versions"
+            id="hero-view-versions"
+            className="text-sm text-neutral-500 hover:text-white underline underline-offset-4 decoration-neutral-700 hover:decoration-white transition-colors duration-200"
+          >
+            View Older Versions
           </a>
         </motion.div>
 

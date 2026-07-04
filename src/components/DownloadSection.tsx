@@ -17,6 +17,7 @@ import {
   FileArchive,
   Tag,
   CalendarDays,
+  Library,
 } from "lucide-react";
 
 // New in v1.1.0 — highlights shown on the dedicated download section.
@@ -50,7 +51,9 @@ const INSTALL_STEPS: string[] = [
   "Enjoy StreamWave.",
 ];
 
-export const DownloadSection: React.FC = () => {
+export const DownloadSection: React.FC<{ onViewVersions?: () => void }> = ({
+  onViewVersions,
+}) => {
   return (
     <section
       className="bg-[#000000] py-24 border-t border-neutral-900 relative overflow-hidden"
@@ -92,6 +95,24 @@ export const DownloadSection: React.FC = () => {
             <Download className="w-5 h-5 group-hover:translate-y-0.5 transition-transform duration-200" aria-hidden="true" />
             Download StreamWave v{VERSION}
           </a>
+
+          {/* ── View All Versions ─────────────────────────────────── */}
+          <a
+            href="/versions"
+            onClick={(e) => {
+              if (onViewVersions) {
+                e.preventDefault();
+                onViewVersions();
+              }
+            }}
+            aria-label="View all StreamWave APK versions"
+            id="download-view-versions"
+            className="group mt-4 inline-flex items-center justify-center gap-2 px-7 py-3 bg-neutral-900 border border-neutral-800 text-white hover:bg-neutral-800 font-semibold text-sm tracking-wide rounded-full transition-all duration-200"
+          >
+            <Library className="w-4 h-4 text-neutral-400" aria-hidden="true" />
+            View All Versions
+          </a>
+
           <p className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs font-mono text-neutral-500">
             <span>{APK_SIZE}</span>
             <span aria-hidden="true">·</span>

@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/versions", "destination": "/index.html" }
+  ]
+}

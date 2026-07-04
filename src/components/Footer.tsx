@@ -2,9 +2,10 @@ import React from "react";
 import { Logo } from "./Logo";
 import { TELEGRAM_URL, APK_URL, CANONICAL_URL } from "../config";
 import { ArrowUp, Send, Share2, Twitter, Facebook } from "lucide-react";
+import { View } from "../types";
 
 export const Footer: React.FC<{
-  onNavigate?: (view: "home" | "privacy" | "terms" | "dmca" | "contact") => void;
+  onNavigate?: (view: View) => void;
 }> = ({ onNavigate }) => {
   const handleScrollToTop = (e: React.MouseEvent) => {
     e.preventDefault();
