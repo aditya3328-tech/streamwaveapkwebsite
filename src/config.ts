@@ -49,7 +49,7 @@ export const LATEST_VERSION: ApkVersion =
 
 export const VERSION      = LATEST_VERSION.version;
 export const VERSION_CODE = 3;
-export const APK_SIZE     = "21.1 MB";
+export const APK_SIZE     = "21.2 MB";
 export const RELEASE_DATE = "2026-08-15";
 export const RELEASE_NOTES =
   "Added subtitles, improved player UI, and fixed bugs.";

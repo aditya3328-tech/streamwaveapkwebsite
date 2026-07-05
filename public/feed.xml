@@ -6,12 +6,19 @@
     <atom:link href="https://official-streamwave-apk.vercel.app/feed.xml" rel="self" type="application/rss+xml" />
     <description>Release notes and updates for StreamWave, the free Android streaming app for movies, TV shows, anime and live sports.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 July 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 05 July 2026 00:00:00 GMT</lastBuildDate>
     <image>
       <url>https://official-streamwave-apk.vercel.app/og-image.png</url>
       <title>StreamWave — Updates</title>
       <link>https://official-streamwave-apk.vercel.app/</link>
     </image>
+    <item>
+      <title>StreamWave v1.2.0 released</title>
+      <link>https://official-streamwave-apk.vercel.app/#download</link>
+      <guid isPermaLink="false">streamwave-v1.2.0</guid>
+      <pubDate>Sat, 05 July 2026 00:00:00 GMT</pubDate>
+      <description>Telegram community integration, Share App feature, profile improvements, and a redesigned loading screen. Download the latest StreamWave APK for Android.</description>
+    </item>
     <item>
       <title>StreamWave v1.1.0 released</title>
       <link>https://official-streamwave-apk.vercel.app/#download</link>
