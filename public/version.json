@@ -1,7 +1,7 @@
 {
   "latestVersion": 3,
   "versionName": "1.2.0",
-  "apkUrl": "https://official-streamwave-apk.vercel.app/StreamWave_1.2.0_Official.apk",
+  "apkUrl": "https://official-streamwave-apk.vercel.app/StreamWave_1.2.1_Official.apk",
   "forceUpdate": false,
   "releaseDate": "2026-08-15",
   "message": "Telegram community integration, Share App feature, profile improvements, and a redesigned loading screen."
